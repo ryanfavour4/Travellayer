@@ -2,8 +2,11 @@
 
 :root {
     --primary-color: #003eb0;
+    --primary-color-rgb: 0 62 176;
     --secondary-color: #7bb6b4;
+    --secondary-color-rgb: 123 182 180;
     --pale-teal: #108584;
+    --pale-teal-rgb: 16 133 132;
     --dark-slate-grey: #324b4b;
     --dark: #080919;
     --light: #f7f7f7;
@@ -171,5 +174,50 @@ button:active {
     body {
         font-size: 16px;
     }
+}
+
+.select-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.select-button.open {
+    border-color: #999;
+}
+
+.select-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-list li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-list li:hover {
+    background-color: #eee;
 }
 

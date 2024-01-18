@@ -1,0 +1,222 @@
+.navbar {
+    padding: 1rem;
+    position: relative;
+    transition: all 0.1s ease;
+    z-index: 2;
+    color: var(--body-text);
+    background: var(--white);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.navbar.scrolledPast {
+    background: rgba(var(--primary-color-rgb) / 0.8);
+    border-bottom: 2px solid var(--white);
+    color: var(--white);
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    right: 0;
+}
+
+.navbar > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.upperLink {
+    display: flex;
+    gap: 2rem;
+    align-self: flex-end;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--white) !important;
+    background: rgba(var(--primary-color-rgb) / 0.5);
+    padding: 0.4rem 1rem;
+    border-radius: 7px;
+}
+
+.upperLink li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.upperLink img {
+    width: 1.1rem;
+}
+
+.lowerLink {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-weight: 600;
+}
+
+.lowerLink a:hover {
+    text-decoration: underline;
+}
+
+.overlay {
+    background: var(--white);
+    box-shadow: 0px 0px 2px 2px rgba(82, 82, 82, 0.5);
+    position: fixed;
+    display: none;
+    width: 82%;
+    height: 100%;
+    right: 0;
+    z-index: 3;
+}
+
+.overlay::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    height: 100%;
+    width: 18%;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay.closeOverlay::before {
+    transform: translateX(-200vw);
+}
+
+.closeOverlay {
+    background: rgba(var(--primary-color-rgb) / 0);
+    transform: translateX(100%);
+}
+
+.mobileNav {
+    display: none;
+}
+
+.more {
+    cursor: pointer;
+}
+
+.overlayWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: calc(100% - 72px);
+    align-items: flex-end;
+    text-align: right;
+}
+
+.scrolledPastSideNav .overlayWrapper {
+    margin-top: 72px;
+}
+
+.overlayWrapper > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--white);
+    height: 100%;
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.overlayWrapper > .moreNavLinks > li {
+    display: block;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.overlayWrapper > .moreNavLinks > li a {
+    width: 86% !important;
+    margin-right: 2rem;
+    border-bottom: 1px solid rgba(var(--primary-color-rgb) / 0.3);
+}
+
+.overlayWrapper > .moreNavLinks > li a:hover {
+    border-bottom: 1px solid rgba(var(--primary-color-rgb) / 1);
+}
+
+.overlayWrapper > footer {
+    background: var(--secondary-color);
+    width: 100%;
+    min-height: 30%;
+}
+
+.overlayWrapper > footer .paleFooterLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 1rem;
+    margin-block: 5%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+    color: var(--white);
+}
+
+.overlayWrapper > footer .paleFooterLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.overlayWrapper > footer .paleFooterLinks li:last-child {
+    margin-right: 0.5rem;
+}
+
+.overlayWrapper > footer .paleFooterLinks img {
+    width: 1.2rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .navbar {
+        padding: 0rem;
+    }
+
+    .logoLink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img.logo {
+        width: 150px;
+    }
+
+    .navbar > div {
+        justify-content: left;
+        gap: 1rem;
+    }
+
+    .overlay {
+        display: flex;
+    }
+
+    .overlay ul a,
+    .overlay ul li {
+        width: 100%;
+        display: block;
+    }
+
+    .mobileNav {
+        display: inline-block;
+    }
+
+    .lowerLink {
+        gap: 1.1rem;
+    }
+
+    .navList {
+        display: none;
+    }
+}
